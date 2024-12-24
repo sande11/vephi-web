@@ -1,17 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Admin Dashboard</h1>
-@stop
-
-@section('content_header')
-    <h1>Job Listings</h1>
-@stop
+@section('title', 'Job Details')
 
 @section('content')
-<a href="{{ url('/job-details') }}" class="text-decoration-none text-black">
+
     <div class="container mt-2 p-0">
         <div class="card bg-primary text-black">
             <div class="card-body">
@@ -27,9 +19,6 @@
                     </div>
                     <i class="fas fa-bookmark bookmark"></i>
                 </div>
-                <div class="ml-2 ">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus eros lorem, sit amet pharetra lorem accumsan quis</p>
-                </div>
                 <div class="mt-3 p-1">
                     <span class="badge bg-secondary text-white p-2">Full Time</span>
                     <span class="badge bg-secondary text-white p-2">Senior Level</span>
@@ -41,7 +30,6 @@
             </div>
         </div>
     </div>
-</a>
 
 @stop
 

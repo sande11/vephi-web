@@ -38,6 +38,10 @@ Route::get('users', function () {
     return view('users');
 })->name('users.index');
 
+Route::get('job-details', function(){
+    return view('job-details');
+})->name('job-details.index');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

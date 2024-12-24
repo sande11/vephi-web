@@ -305,16 +305,16 @@ return [
             'text' => 'search',
             'topnav_right' => true,
         ],
-        [
-            'type' => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
+        // [
+        //     'type' => 'fullscreen-widget',
+        //     'topnav_right' => true,
+        // ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
         [
             'text' => 'blog',
             'url' => 'admin/blog',
@@ -329,9 +329,9 @@ return [
         // ],
         ['header' => 'Menu'],
         [
-            'text' => 'profile',
-            'url' => 'profile',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Home',
+            'url' => '/home',
+            'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'Posts',
