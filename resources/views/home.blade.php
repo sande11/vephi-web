@@ -3,8 +3,106 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+<div class="d-flex justify-content-between align-items-center">
     <h1>Admin Dashboard</h1>
+    <!-- <a href="" class="btn btn-primary">New Post</a> -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPostModal">
+    New Post
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newPostModalLabel">New Job Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" class="form-control" id="companyName" placeholder="Enter company name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="companyLogo">Company Logo</label>
+                            <input type="file" class="form-control" id="companyLogo">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="position">Position</label>
+                            <input type="text" class="form-control" id="position" placeholder="Enter position">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Enter location">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="postedOn">Posted On</label>
+                            <input type="date" class="form-control" id="postedOn">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="closingDate">Closing Date</label>
+                            <input type="date" class="form-control" id="closingDate">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="jobType">Job Type</label>
+                            <select class="form-control" id="jobType">
+                                <option>Part Time</option>
+                                <option>Full Time</option>
+                                <option>Contract</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="level">Level</label>
+                            <select class="form-control" id="level">
+                                <option>Low Level</option>
+                                <option>Mid Level</option>
+                                <option>Senior</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="aboutCompany">About Company</label>
+                        <textarea class="form-control" id="aboutCompany" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="aboutPosition">About Position</label>
+                        <textarea class="form-control" id="aboutPosition" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsibilities">Responsibilities</label>
+                        <textarea class="form-control" id="responsibilities" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualifications">Qualifications and Requirements</label>
+                        <textarea class="form-control" id="qualifications" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="application">Application</label>
+                        <textarea class="form-control" id="application" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 @stop
+
 
 @section('content_header')
     <h1>Job Listings</h1>
