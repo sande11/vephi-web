@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(
-    'posts',
-    function () {
-        return view('posts');
-    }
-)->name('posts.index');
-Route::get('/posts', [PostController::class, 'index'])->name('name.index');
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::delete('/posts/{id}', [PostController::class, 'delete'])->name('posts.delete');
-Route::put('/posts/{id}', [PostController::class, 'updatePost'])->name('posts.update');
 
 Route::get('profile', function () {
     return view('profile');
@@ -45,3 +36,6 @@ Route::get('job-details', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// job posts CRUD routes
+Route::post('/home', [JobPostController::class, 'store'])->name('job-post.store');

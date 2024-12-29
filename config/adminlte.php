@@ -333,11 +333,7 @@ return [
             'url' => '/home',
             'icon' => 'fas fa-fw fa-home',
         ],
-        [
-            'text' => 'Posts',
-            'url' => '/posts',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+      
         // [
         //     'text' => 'multilevel',
         //     'icon' => 'fas fa-fw fa-share',
