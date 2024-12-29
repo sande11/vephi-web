@@ -165,7 +165,7 @@
 
 @section('content')
 @foreach ($jobposts as $jobposts)
-<a href="{{ url('/job-details' . $jobposts->id) }}" class="text-decoration-none text-black">
+<a href="{{ url('/job-details/' . $jobposts->id) }}" class="text-decoration-none text-black">
     <div class="container mt-2 p-0">
         <div class="card bg-primary text-black">
             <div class="card-body">
@@ -182,10 +182,10 @@
                     <i class="fas fa-bookmark bookmark"></i>
                 </div>
                 <div class="ml-2 ">
-                    <p> {{ Str::limit($jobposts->about_job, 100)}} </p>
+                    <p> {{ Str::limit($jobposts->about_position, 100)}} </p>
                 </div>
                 <div class="mt-3 p-1">
-                    <span class="badge bg-secondary text-white p-2"> {{$jobposts->type}} </span>
+                    <span class="badge bg-secondary text-white p-2"> {{$jobposts->job_type}} </span>
                     <span class="badge bg-secondary text-white p-2">{{$jobposts->level}}</span>
                 </div>
                 <div class="d-flex justify-content-between mt-4">

@@ -37,10 +37,15 @@ class JobPostController extends Controller
     
     }
 
+    // fetch all
     public function index(){
         $jobposts = JobPost::all();
 
-        return view('job_posts.home', compact('jobposts'));
+        return view('home', compact('jobposts'));
     }
-    
+    // fetch job details
+    public function showJobDetails($id) {
+        $jobposts = JobPost::findOrFail($id);
+        return view('job-details', compact('jobposts'));
+    }
 }
