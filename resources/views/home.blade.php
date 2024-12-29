@@ -164,38 +164,39 @@
 @stop
 
 @section('content')
-<a href="{{ url('/job-details') }}" class="text-decoration-none text-black">
+@foreach ($jobposts as $jobposts)
+<a href="{{ url('/job-details' . $jobposts->id) }}" class="text-decoration-none text-black">
     <div class="container mt-2 p-0">
         <div class="card bg-primary text-black">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
                         <!-- Company Logo -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX/////uQEBpO9/ugDyUCL//v8AoO////3/tQB4twD/7sHzTiL///z72tDk8MmN0vb+6rjK6vvB3YvY6rT3rZryRQvA6Pu24/rf7sEBpe76//8AoOz/+//518n4qJP67ejp9dzvPAD5+ejZ8Prr+fj89uIAnO6F0vP86bG/5f7++fDYoUMTAAACL0lEQVR4nO3cy05bMRiFUUNx3IApUEgLh/u1tO//gPUhFZ1WYqsKaH1ibHnZThjlL0WSJEmSJEmSJEmS/rHWWq+B1ovVXucVU9XaA8KLt6/xulYZ0N6CC7YaWKRcXp1kurqufT74m6+pblrguHq5ul1lur0cq/VSj5epTgOPdLyrk9VOoL2dvdX+eBHj73j5KdPytATukJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkPD9Ccss3Av0R1g3U5hpQ4XzK01c4Whjhbnf478KY7/Hj7zSdr2f6qIPYK93X1LdlczIgcQqZT1D5OUOE4NEXop8zQzhNKVGkUxjS33cYmq90hOH/7JS7NTn5UpsfktJDP4o48RrbEd1fBAz21rvbXyoA6tMmSOf1xr7GZ/q4Im1xHdpCw4FupiJdXr7pv5uLnGH9f57qoc63199PAz1/Bi5w37wtAh0fr54Olq/rMPPqXYT/zCGcLEd6Oxs+/xVuJXp4wu3CP+rcERISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEj47oSLTRW2H5Hf44+ejvo8MKI8536PPwVmKtR+//NbqIdae2/lcTfVr564w6nE5sm0Os0DTkKDNkpoPs049si0lfk59TZeVW60SZvHbCT2JkmSJEmSJEmSJEkfpN90CIpO9TYYXgAAAABJRU5ErkJggg==" alt="Company Logo" class="rounded-circle me-5" style="width: 50px; height: 50px; object-fit:contain;">
+                        <img src="{{ $jobposts->company_logo }}" alt="Company Logo" class="rounded-circle me-5" style="width: 50px; height: 50px; object-fit:contain;">
                         <!-- Job Title and Company -->
                         <div class="p-3">
-                            <h5 class="card-title">Software Engineer</h5>
-                            <p class="card-text">Microsoft</p>
+                            <h5 class="card-title"> {{$jobposts->position}} </h5>
+                            <p class="card-text"> {{$jobposts->company_name}} </p>
                         </div>
                     </div>
                     <i class="fas fa-bookmark bookmark"></i>
                 </div>
                 <div class="ml-2 ">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus eros lorem, sit amet pharetra lorem accumsan quis</p>
+                    <p> {{ Str::limit($jobposts->about_job, 100)}} </p>
                 </div>
                 <div class="mt-3 p-1">
-                    <span class="badge bg-secondary text-white p-2">Full Time</span>
-                    <span class="badge bg-secondary text-white p-2">Senior Level</span>
+                    <span class="badge bg-secondary text-white p-2"> {{$jobposts->type}} </span>
+                    <span class="badge bg-secondary text-white p-2">{{$jobposts->level}}</span>
                 </div>
                 <div class="d-flex justify-content-between mt-4">
-                    <p>New York</p>
-                    <p>Posted: 20 hours ago</p>
+                    <p> {{$jobposts->location}}</p>
+                    <p>Posted: {{$jobposts->created_at->diffForHumans()}} </p>
                 </div>
             </div>
         </div>
     </div>
 </a>
-
+@endforeach
 @stop
 
 @section('css')

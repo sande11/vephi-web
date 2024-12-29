@@ -36,5 +36,11 @@ class JobPostController extends Controller
         return redirect()->back()->with('success', 'Job posted successfully!');
     
     }
+
+    public function index(){
+        $jobposts = JobPost::all();
+
+        return view('job_posts.home', compact('jobposts'));
+    }
     
 }

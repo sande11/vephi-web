@@ -39,3 +39,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // job posts CRUD routes
 Route::post('/home', [JobPostController::class, 'store'])->name('job-post.store');
+Route::get('/home', [JobPostController::class, 'index'])->name('job-posts.index');
